@@ -1,6 +1,6 @@
 # GoogleAppScripts
 
-# Personlised Certificate Sender Script
+## Personlised Certificate Sender Script
 
 This repository provides a flexible Google Apps Script that automates the process of sending certificates to participants listed in a Google Sheet. The certificates are retrieved from a specified Google Drive folder and emailed with personalized messages. The script is fully configurable, making it adaptable to various use cases.
 
