@@ -1,19 +1,19 @@
 # GoogleAppScripts
 
-## Personalized Certificate Sender & Document Generator Scripts
+## Personalized Document Sender & Document Generator Scripts
 
-This repository provides flexible Google Apps Scripts for automating document generation and email-based certificate distribution. These scripts simplify workflows by integrating Google Workspace apps like Sheets, Docs, Drive, and Gmail. 
+This repository provides flexible Google Apps Scripts for automating document generation and email-based document distribution. These scripts simplify workflows by integrating Google Workspace apps like Sheets, Docs, Drive, and Gmail.
 
 ---
 
 ## **Features**
 
-### **1. Personalized Certificate Sender Script** (`sendCertificates.gs`)
+### **1. Personalized Document Sender Script** (`sendDocuments.gs`)
 - **Sheet Integration**: Fetches participant data from a Google Sheet with configurable column mappings.
-- **Certificate Matching**: Matches participants to certificates stored in a Google Drive folder.
+- **Document Matching**: Matches participants to documents stored in a Google Drive folder.
 - **Customizable Emails**: Supports personalized email templates in both plain text and HTML formats.
 - **Status Tracking**: Logs the status of each email sent in the Google Sheet for easy tracking.
-- **Error Handling**: Skips rows with missing data and logs errors for unmatched certificates or failed email sends.
+- **Error Handling**: Skips rows with missing data and logs errors for unmatched documents or failed email sends.
 
 ### **2. Document Generator Script** (`DocGeneration.gs`)
 - **Dynamic Placeholders**: Replaces placeholders (e.g., `{{Name}}`, `{{Role}}`) in a Google Doc template with data from a Google Sheet.
@@ -32,7 +32,7 @@ Clone this repository or download the source code.
 
 ### **2. Prepare Google Sheets**
 
-#### For Certificate Sender:
+#### For Document Sender:
 - Create a Google Sheet with the following columns (customizable in the script):
   - `Full Name`
   - `Category`
@@ -50,8 +50,8 @@ Clone this repository or download the source code.
 
 ### **3. Create Templates**
 
-#### Certificate Sender:
-- Certificates should be stored in a Google Drive folder, with filenames matching participant names (case-insensitive).
+#### Document Sender:
+- Documents should be stored in a Google Drive folder, with filenames matching participant names (case-insensitive).
 
 #### Document Generator:
 - Design a Google Doc template with placeholders in `{{Placeholder}}` format.
@@ -66,12 +66,12 @@ Clone this repository or download the source code.
 
 ### **4. Configure the Scripts**
 
-#### For Certificate Sender (`sendCertificates.gs`):
+#### For Document Sender (`sendDocuments.gs`):
 1. Open your Google Spreadsheet.
 2. Go to `Extensions > Apps Script`.
 3. Copy the script into the Apps Script editor.
 4. Update the `CONFIG` object with:
-   - `folderId`: The Google Drive folder ID for certificates.
+   - `folderId`: The Google Drive folder ID for documents.
    - `sheetName`: The name of the sheet with participant data.
    - `emailSubject` and `senderName`: Customize email settings.
    - `columns`: Map your sheet’s columns to expected fields.
@@ -94,8 +94,8 @@ Run the scripts for the first time and grant the required permissions, such as a
 
 ### **6. Execute the Scripts**
 
-#### Certificate Sender:
-- Run the `sendCertificates` function to start sending personalized emails with attached certificates.
+#### Document Sender:
+- Run the `sendDocuments` function to start sending personalized emails with attached documents.
 
 #### Document Generator:
 - Run the `generateDocumentsFromTemplate` function to generate personalized documents.
@@ -104,7 +104,7 @@ Run the scripts for the first time and grant the required permissions, such as a
 
 ## **Examples**
 
-### **Certificate Sender Configuration**
+### **Document Sender Configuration**
 ```javascript
 const CONFIG = {
   folderId: "your-folder-id-here",
@@ -184,9 +184,5 @@ Contributions are welcome! Feel free to submit a pull request or report an issue
 ---
 
 ## **Disclaimer**
-
 These scripts are provided "as-is" without warranty of any kind. Use responsibly and ensure compliance with data privacy regulations.
 
----
-
-This combined and enhanced README ensures clarity and usability for both the `sendCertificates.gs` and `DocGeneration.gs` scripts, making it ready for open-source sharing on GitHub.
